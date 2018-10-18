@@ -3,7 +3,7 @@ import user from '@/resources/user'
 import dealer from '@/resources/dealer'
 import tracker from '@/resources/tracker'
 
-const navixy = {
+const Navixy = {
     api (config) {
         return new api(config, {
             user,
@@ -13,4 +13,4 @@ const navixy = {
     }
 }
 
-module.exports = navixy
+module.exports = Navixy
