@@ -4,7 +4,7 @@ import dealer from '@/resources/dealer'
 import tracker from '@/resources/tracker'
 
 const Navixy = {
-    api (config) {
+    Api (config) {
         return new api(config, {
             user,
             tracker,

@@ -3,7 +3,7 @@
 ## Usage:
 
 ```
-const API = new Navixy.api({
+const API = new Navixy.Api({
       user:{
          login:'demo@navixy.com',
          password:'demo'

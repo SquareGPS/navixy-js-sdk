@@ -28,6 +28,6 @@ module.exports = {
     filename: 'navixy-sdk.js',
     path: path.resolve(__dirname, 'dist'),
     library: 'Navixy',
-    libraryTarget: 'var'
+    libraryTarget: 'umd'
   }
 };
