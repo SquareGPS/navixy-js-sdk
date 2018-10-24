@@ -1,5 +1,5 @@
 import axios from 'axios'
-import default_config from '../config'
+import default_config from '@/config'
 
 function buildParams (paramsObject) {
   return Object.keys(paramsObject)
