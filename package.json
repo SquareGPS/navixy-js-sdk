@@ -1,8 +1,8 @@
 {
-  "name": "navixy-sdk",
-  "version": "1.0.0",
-  "description": "Navixy API SDL",
-  "main": "dist/vue-mapbox-nvx.js",
+  "name": "navixy-js-sdk",
+  "version": "1.0.2",
+  "description": "Navixy API SDK",
+  "main": "dist/navixy-js-sdk.js",
   "scripts": {
     "test": "test",
     "watch": "webpack --config webpack.config.js --watch",

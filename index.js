@@ -1,1 +1,1 @@
-module.exports = require('./dist/navixy-sdk');
+module.exports = require('./dist/navixy-js-sdk');

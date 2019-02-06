@@ -1,60 +1,78 @@
 <!doctype html>
 <html>
 <head>
-  <title>Example list</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuetify@1.2.2/dist/vuetify.min.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vuetify@1.2.2/dist/vuetify.min.js"></script>
-  <script src="../../dist/navixy-sdk.js"></script>
-  <style>
-    .trackers-list {
-      width: 400px;
-      margin: 36px;
-    }
-  </style>
+    <title>Example list</title>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuetify@1.2.2/dist/vuetify.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@1.2.2/dist/vuetify.min.js"></script>
+    <script src="../../dist/navixy-js-sdk.js"></script>
+    <style>
+        .trackers-list {
+            width: 400px;
+            height: 400px;
+            margin: 36px;
+        }
+
+        .spinner{
+            position: absolute;
+            left: calc(50% - 24px);
+            top: calc(50% - 24px);
+        }
+    </style>
 </head>
 <body>
 <div id="app">
-  <v-app id="inspire">
-    <v-card class="trackers-list">
-      <v-toolbar color="teal"
-                 dark>
-        <v-toolbar-title>Trackers list</v-toolbar-title>
-      </v-toolbar>
-      <v-list>
-        <v-list-tile v-for="tracker in trackers">
-          <v-list-tile-action>
-            <v-checkbox></v-checkbox>
-          </v-list-tile-action>
-          <v-list-tile-title>{{ tracker.label }}</v-list-tile-title>
-        </v-list-tile>
-      </v-list>
-    </v-card>
-  </v-app>
+    <v-app id="inspire">
+        <v-card class="trackers-list">
+            <v-toolbar color="teal"
+                       dark>
+                <v-toolbar-title>Trackers list</v-toolbar-title>
+            </v-toolbar>
+            <v-list>
+                <v-progress-circular v-if="loading"
+                                     :width="3"
+                                     :size="48"
+                                     class="spinner"
+                                     color="primary"
+                                     indeterminate></v-progress-circular>
+                <v-list-tile v-for="tracker in trackers">
+                    <v-list-tile-action>
+                        <v-checkbox></v-checkbox>
+                    </v-list-tile-action>
+                    <v-list-tile-title>{{ tracker.label }}</v-list-tile-title>
+                </v-list-tile>
+            </v-list>
+        </v-card>
+    </v-app>
 </div>
 <script>
-  new Vue({
-    el: '#app',
-    data () {
-      return {
-        trackers: []
-      }
-    },
-    mounted () {
-      const API = new Navixy.Api({
-        user: {
-          login: 'demo@navixy.com',
-          password: 'demo'
+    new Vue({
+        el: '#app',
+        data () {
+            return {
+                loading: false,
+                trackers: []
+            }
         },
-        domain: 'demo.navixy.com'
-      })
+        mounted () {
+            this.loading = true
 
-      API.tracker.list().then(result => {
-        this.trackers = result.list
-      })
-    }
-  })
+            const API = new Navixy.Api({
+                user: {
+                    login: 'demo@navixy.com',
+                    password: 'demo'
+                },
+                domain: 'demo.navixy.com'
+            })
+
+            API.tracker.list().then(result => {
+                this.trackers = result.list
+                this.loading = false
+            })
+        }
+    })
 </script>
 </body>
 </html>
