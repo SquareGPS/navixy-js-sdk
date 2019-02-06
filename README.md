@@ -52,4 +52,27 @@ API.setHash('<second-client-key>').tracker.list().then(list => console.log(list)
 
 You can call any Navixy API requests: (see [DOCs](https://developers.navixy.com/#/api/getting-started/))
 
+## Request method
+
+```API.request(<request-name>, [<parameters>], [<root-property>])```
+Arguments:
+- request-name - full request name e.g. 'trackers/list' (see [DOCs](https://developers.navixy.com/#/api/getting-started/))
+- parametest [Optional] - object with request parameters
+- root property [Optional] - string name of root property of answer
+
+### Example:
+```
+API.request('tracker/counter/value/get', {
+   tracker_id: 12345,
+   type: 'odometer'
+}, 'value').then(odometer => console.log(odometer)) // 18.9
+
+/* full answer
+{
+    "success": true,
+    "value": 18.9  // float. last value of counter
+}
+*/
+``` 
+
 
