@@ -1,5 +1,16 @@
 # Navixy API JS SDK
 
+## Installation
+With NPM
+```
+npm i navixy-js-sdk -s
+```
+
+Script tag
+```
+<script src="https://unpkg.com/navixy-js-sdk/dist/navixy-js-sdk.js"></script>
+```
+
 ## Usage:
 With client login and password:
 ```
@@ -39,6 +50,6 @@ API.setHash('<first-client-key>').tracker.list().then(list => console.log(list))
 API.setHash('<second-client-key>').tracker.list().then(list => console.log(list))
 ```
 
-You can call any Navixy API request: (see [DOCs](https://developers.navixy.com/#/api/getting-started/))
+You can call any Navixy API requests: (see [DOCs](https://developers.navixy.com/#/api/getting-started/))
 
 
