@@ -27,7 +27,7 @@ const API = new Navixy.Api({
 API.tracker.list().then(list => console.log(list))
 ```
 
-You can change the auth hash dynamicly:
+You can change the auth hash dynamically:
 
 ```
 const API = new Navixy.Api()
