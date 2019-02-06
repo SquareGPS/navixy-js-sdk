@@ -57,7 +57,7 @@ You can call any Navixy API requests: (see [DOCs](https://developers.navixy.com/
 ```API.request(<request-name>, [<parameters>], [<root-property>])```
 Arguments:
 - request-name - full request name e.g. 'trackers/list' (see [DOCs](https://developers.navixy.com/#/api/getting-started/))
-- parametest [Optional] - object with request parameters
+- parameters [Optional] - object with request parameters
 - root property [Optional] - string name of root property of answer
 
 ### Example:
