@@ -1,5 +1,7 @@
 # Navixy API JS SDK
 
+[DEMO](https://squaregps.github.io/navixy-js-sdk/examples/list/)
+
 ## Installation
 With NPM
 ```
