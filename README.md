@@ -5,7 +5,7 @@
 ## Installation
 With NPM
 ```
-npm i navixy-js-sdk -s
+npm i navixy-js-sdk
 ```
 
 Script tag

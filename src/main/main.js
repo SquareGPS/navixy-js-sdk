@@ -5,7 +5,7 @@ import { cloneDeepWith } from 'lodash'
 function buildParams (paramsObject) {
     return Object.keys(paramsObject)
         .map(key => {
-            var resultValue = paramsObject[key]
+            let resultValue = paramsObject[key]
 
             if (typeof paramsObject[key] === 'object') {
                 resultValue = JSON.stringify(paramsObject[key])
