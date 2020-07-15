@@ -1,6 +1,6 @@
 import default_config from '@/config'
 import axios from 'axios'
-import { cloneDeepWith } from 'lodash'
+import { cloneDeepWith, template } from 'lodash'
 
 function buildParams (paramsObject) {
     return Object.keys(paramsObject)
@@ -25,7 +25,7 @@ class API {
             ...default_config,
             ...config
         }
-        this.apiUrl = this.CONFIG.apiUrl
+        this.apiUrl = template(this.CONFIG.apiUrl)(this.CONFIG)
         this.inject(parts)
     }
 
