@@ -1,3 +1,9 @@
+> ⚠️ **Deprecated — not maintained.** `navixy-js-sdk` has been unmaintained since 2019 and is no longer supported.
+> Please build against the **Navixy REST API** using our published **OpenAPI specifications** — start at the [Developer Hub](https://www.navixy.com/docs/developers/).
+> A modern, typed SDK generated from those specs is planned as a separate project.
+
+---
+
 # Navixy API JS SDK
 
 [DEMO](https://squaregps.github.io/navixy-js-sdk/examples/list/)
